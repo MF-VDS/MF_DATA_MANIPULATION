@@ -1,0 +1,17 @@
+name: env_MF_stage
+channels:
+  - conda-forge
+  - cmts
+  - eumetsat
+dependencies:
+  - conda
+  - mamba==1.4.1
+  - nb_conda_kernels
+  - pip
+  - python=3.10
+  - setuptools=65
+  - widgetsnbextension
+  - zip
+  - pillow
+  - gdal
+prefix: /home/coster/.conda/envs/env_MF_stage
