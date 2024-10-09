@@ -14,4 +14,9 @@ dependencies:
   - zip
   - pillow
   - gdal
+  - satpy
+  - matplotlib
+  - cartopy
+  - ipympl
+  - imagemagick
 prefix: /home/coster/.conda/envs/env_MF_stage
