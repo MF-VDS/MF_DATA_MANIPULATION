@@ -1,0 +1,31 @@
+
+.small-image {
+    transition: transform 0.4s; /* Ajout d'une transition pour un effet visuel agréable */
+}
+
+.small-image:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+}
+
+
+.container-fluid {
+  overflow: hidden; /* Empêche le débordement de la colonne droite en cas de réduction de la fenêtre */
+}
+
+
+
+.col-md-9 img {
+  max-width: 90%; /* Ajuste la taille de la grande image à la largeur de la colonne */
+  height: auto; /* Maintient les proportions */
+  border-radius: 10px;
+}
+
+.col-md-6 img {
+  max-height: 80vh; /* Ajuste la taille de la grande image à la largeur de la colonne */
+  width: auto; /* Maintient les proportions */
+  border-radius: 10px;
+}
+
+
+
+
