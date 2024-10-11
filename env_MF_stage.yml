@@ -19,4 +19,5 @@ dependencies:
   - cartopy
   - ipympl
   - imagemagick
+  - hdf5plugin
 prefix: /home/coster/.conda/envs/env_MF_stage
