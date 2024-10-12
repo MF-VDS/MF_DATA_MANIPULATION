@@ -59,7 +59,7 @@ jupyter lab ou jupyter-lab, selon votre système d'exploitation.
 Cela devrait ouvrir Jupyter Notebooks dans une fenêtre de navigateur.
 
 Remarque:
-Un répertoire MF_DATA contenant les fichiers sources est présent par défaut sur le JupyterHub mis à disposition
+Un répertoire MF_DATA contenant les fichiers sources est accessible sur le JupyterHub mis à disposition
 A défaut télécharger les données sur le data store eumetsat.int
 
 <hr>
