@@ -4,20 +4,18 @@ channels:
   - cmts
   - eumetsat
 dependencies:
-  - conda
-  - mamba==1.4.1
-  - nb_conda_kernels
-  - pip
+  - cartopy
+  - gdal
+  - hdf5plugin
+  - imagemagick
+  - ipympl
+  - jupyterlab
+  - matplotlib
+  - pillow
   - python=3.10
+  - satpy
   - setuptools=65
   - widgetsnbextension
   - zip
-  - pillow
-  - gdal
-  - satpy
-  - matplotlib
-  - cartopy
-  - ipympl
-  - imagemagick
-  - hdf5plugin
-prefix: /home/coster/.conda/envs/env_MF_stage
+  - libgdal
+  - libgdal-hdf5

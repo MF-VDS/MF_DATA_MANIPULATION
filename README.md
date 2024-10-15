@@ -47,7 +47,7 @@ Cela créera un environnement Python appelé *env_MF**. L'environnement ne sera 
 
 `conda activate env_MF_stage`
 et
-`python -m ipykernel install --user –name=env_MF_stage` (Utilisation de ce kernel dans le noteboook)
+`python -m ipykernel install --user --name=env_MF_stage` (Utilisation de ce kernel dans le noteboook)
 
 Maintenant, vous êtes prêt!
 
@@ -59,7 +59,7 @@ jupyter lab ou jupyter-lab, selon votre système d'exploitation.
 Cela devrait ouvrir Jupyter Notebooks dans une fenêtre de navigateur.
 
 Remarque:
-Un répertoire MF_DATA contenant les fichiers sources est accessible sur le JupyterHub mis à disposition
+Un répertoire /stockage/DATA contenant les fichiers sources est accessible sur le JupyterHub mis à disposition
 A défaut télécharger les données sur le data store eumetsat.int
 
 <hr>
