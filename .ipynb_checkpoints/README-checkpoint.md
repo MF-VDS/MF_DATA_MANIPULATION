@@ -47,7 +47,7 @@ Cela créera un environnement Python appelé *env_MF**. L'environnement ne sera 
 
 `conda activate env_MF_stage`
 et
-`python -m ipykernel install --user –name=env_MF_stage` (Utilisation de ce kernel dans le noteboook)
+`python -m ipykernel install --user --name=env_MF_stage` (Utilisation de ce kernel dans le noteboook)
 
 Maintenant, vous êtes prêt!
 
