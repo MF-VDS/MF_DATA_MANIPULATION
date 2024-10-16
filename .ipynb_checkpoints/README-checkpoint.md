@@ -33,7 +33,7 @@ Cela fera une copie locale de tous les fichiers pertinents.
 ### Environnement Python
 
 Python permet aux utilisateurs de créer des environnements spécifiques adaptés à leurs applications.
-Ces didacticiels inclus dans cette collection nécessitent un certain nombre de packages non standard. Dans ce répertoire, les utilisateurs trouveront un fichier *env_MF.yaml* qui pourra être utilisé pour
+Ces didacticiels inclus dans cette collection nécessitent un certain nombre de packages non standard. Dans ce répertoire, les utilisateurs trouveront un fichier *env_MF_stage.yaml* qui pourra être utilisé pour
 construire un environnement qui installera tous les packages requis.
 
 Pour construire l'environnement, vous devez ouvrir un **terminal** (Linux/OSx) et accéder au dossier du référentiel que vous avez téléchargé dans la section **Installation** ci-dessus. Dans ce dossier se trouve un fichier appelé **env_MF_stage.yml**. Celui-ci contient toutes les informations dont nous avons besoin pour installer les packages concernés.
@@ -45,11 +45,11 @@ Pour créer notre environnement Python, depuis le terminal (OSx/Linux), vous pou
 
 Cela créera un environnement Python appelé *env_MF**. L'environnement ne sera pas activé par défaut. Pour l'activer, exécutez :
 
-`conda activate env_MF_stage`
+`conda activate env_MF_stage` ( parfois /opt/conda/env_MF_stage )
 et
 `python -m ipykernel install --user --name=env_MF_stage` (Utilisation de ce kernel dans le noteboook)
 
-Maintenant, vous êtes prêt!
+Maintenant, vous êtes prêts!
 
 ### Utiliser Jupyter Notebook
 
@@ -59,8 +59,8 @@ jupyter lab ou jupyter-lab, selon votre système d'exploitation.
 Cela devrait ouvrir Jupyter Notebooks dans une fenêtre de navigateur.
 
 Remarque:
-Un répertoire MF_DATA contenant les fichiers sources est accessible sur le JupyterHub mis à disposition
-A défaut télécharger les données sur le data store eumetsat.int
+un répertoire /stockage/DATA contenant les fichiers sources est accessible sur le JupyterHub mis à disposition.
+À défaut télécharger les données sur le data store eumetsat.int
 
 <hr>
 <hr>
