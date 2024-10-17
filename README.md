@@ -5,6 +5,7 @@
 
 
 Manipulation et traitement des données brutes satellitaires de niveau 1
+
 Météo-France
 
 Pour toutes questions contacter meteo-spatiale@meteo.fr
@@ -47,6 +48,7 @@ Cela créera un environnement Python appelé *env_MF_stage**. L'environnement ne
 
 `conda activate env_MF_stage` ( parfois /opt/conda/env_MF_stage )
 et
+
 `python -m ipykernel install --user --name=env_MF_stage` (Utilisation de ce kernel dans le noteboook)
 
 Maintenant, vous êtes prêts!
@@ -59,7 +61,8 @@ jupyter lab ou jupyter-lab, selon votre système d'exploitation.
 Cela devrait ouvrir Jupyter Notebooks dans une fenêtre de navigateur.
 
 Remarque:
-un répertoire /stockage/DATA contenant les fichiers sources est accessible sur le JupyterHub mis à disposition.
+Un répertoire /stockage/DATA contenant les fichiers sources est accessible sur le JupyterHub mis à disposition.
+
 À défaut télécharger les données sur le data store d'eumetsat (https://data.eumetsat.int/search?)
 
 <hr>
