@@ -1,0 +1,21 @@
+name: env_MF_stage
+channels:
+  - conda-forge
+  - cmts
+  - eumetsat
+dependencies:
+  - cartopy
+  - gdal
+  - hdf5plugin
+  - imagemagick
+  - ipympl
+  - jupyterlab
+  - matplotlib
+  - pillow
+  - python=3.10
+  - satpy
+  - setuptools=65
+  - widgetsnbextension
+  - zip
+  - libgdal
+  - libgdal-hdf5
