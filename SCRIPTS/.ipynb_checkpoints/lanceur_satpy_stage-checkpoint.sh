@@ -3,7 +3,7 @@
 
 #source  ~/anaconda3/etc/profile.d/conda.sh
 conda activate env_MF_stage
-PYTHONPATH=/home/vds/anaconda3/envs/satpy_test2/bin # A modifier !!!
+PYTHONPATH=/opt/conda/env_MF_stage # A modifier !!!
 
 #dj=`date +%Y%m%d`
 #hh=$(date +%H)
@@ -19,7 +19,7 @@ nomdomaine=etna
 latdomaine='37.5'
 londomaine='15'
 
-for hh in 00 #01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
+for hh in 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
 do
     for mm in 00 #10 20 30 40 50
     do
@@ -31,7 +31,7 @@ do
     if [ "$mm" = "40" ] ; then minutem=4 ; fi
     if [ "$mm" = "50" ] ; then minutem=5 ; fi
 
-        for compo in ash # geo_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection
+        for compo in ash geo_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection
         do
 
             nomcompo=${compo}
