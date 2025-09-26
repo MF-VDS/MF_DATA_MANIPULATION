@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<informationPackage xmlns="http://www.eumetsat.int/sip" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:om="http://www.opengis.net/om/2.0" xmlns:ns5="http://www.isotc211.org/2005/gco" xmlns:ns6="http://www.isotc211.org/2005/gmd" xmlns:ns7="http://www.isotc211.org/2005/gmx" xmlns:ns8="http://www.isotc211.org/2005/gts" xmlns:eop="http://www.opengis.net/eop/2.1" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:eum="http://www.eumetsat.int/eop/1.0" xmlns:ns12="http://www.opengis.net/gml" xmlns:ns13="http://www.opengis.net/swe/1.0" xmlns:ns14="http://www.w3.org/2001/SMIL20/" xmlns:ns15="http://www.w3.org/2001/SMIL20/Language" xmlns:eu="http://www.eumetsat.int/sentinel">
+    <dataSection>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140456_IDPFI_OPE_20250825140007_20250825140018_N__O_0085_0001.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>3189990</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140456_IDPFI_OPE_20250825140007_20250825140018_N__O_0085_0001.nc</path>
+            <checksum algorithm="md5">e1a3d4005dfbedfd1de3763696979747</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140510_IDPFI_OPE_20250825140007_20250825140031_N__O_0085_0002.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>10743603</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140510_IDPFI_OPE_20250825140007_20250825140031_N__O_0085_0002.nc</path>
+            <checksum algorithm="md5">3c85c0f78d8de6945355a463a6c988d0</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140522_IDPFI_OPE_20250825140013_20250825140045_N__O_0085_0003.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>15573092</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140522_IDPFI_OPE_20250825140013_20250825140045_N__O_0085_0003.nc</path>
+            <checksum algorithm="md5">1ba3e1a11a0658195994ed64950d6eb1</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140533_IDPFI_OPE_20250825140024_20250825140100_N__O_0085_0004.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>18743308</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140533_IDPFI_OPE_20250825140024_20250825140100_N__O_0085_0004.nc</path>
+            <checksum algorithm="md5">abe185bbdd6960584de6cf7f5666608b</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140546_IDPFI_OPE_20250825140031_20250825140107_N__O_0085_0005.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>20731687</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140546_IDPFI_OPE_20250825140031_20250825140107_N__O_0085_0005.nc</path>
+            <checksum algorithm="md5">205d89ea02958f9b9355c9ced446e839</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140555_IDPFI_OPE_20250825140045_20250825140124_N__O_0085_0006.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>22982712</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140555_IDPFI_OPE_20250825140045_20250825140124_N__O_0085_0006.nc</path>
+            <checksum algorithm="md5">e82e6623ce608808faaaa2adc8c84e93</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140602_IDPFI_OPE_20250825140100_20250825140141_N__O_0085_0007.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>25630091</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140602_IDPFI_OPE_20250825140100_20250825140141_N__O_0085_0007.nc</path>
+            <checksum algorithm="md5">1594d88ea5c8fad45237736b69004e66</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140612_IDPFI_OPE_20250825140107_20250825140149_N__O_0085_0008.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>26854073</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140612_IDPFI_OPE_20250825140107_20250825140149_N__O_0085_0008.nc</path>
+            <checksum algorithm="md5">dad665e081b266e099398581021ffdd3</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140623_IDPFI_OPE_20250825140124_20250825140207_N__O_0085_0009.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>26957645</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140623_IDPFI_OPE_20250825140124_20250825140207_N__O_0085_0009.nc</path>
+            <checksum algorithm="md5">2bf840b1429e9d5273dc2aae5642970a</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140634_IDPFI_OPE_20250825140141_20250825140225_N__O_0085_0010.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>29141597</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140634_IDPFI_OPE_20250825140141_20250825140225_N__O_0085_0010.nc</path>
+            <checksum algorithm="md5">f34c6cb9fc71b94532dd1847953bbf7a</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140638_IDPFI_OPE_20250825140149_20250825140235_N__O_0085_0011.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>29257709</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140638_IDPFI_OPE_20250825140149_20250825140235_N__O_0085_0011.nc</path>
+            <checksum algorithm="md5">880197ff228d5f4d3c8da5a0385db2c5</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140654_IDPFI_OPE_20250825140225_20250825140313_N__O_0085_0013.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>31119025</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140654_IDPFI_OPE_20250825140225_20250825140313_N__O_0085_0013.nc</path>
+            <checksum algorithm="md5">b9e29f6125bf1096c454cc51badad16d</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140655_IDPFI_OPE_20250825140244_20250825140322_N__O_0085_0014.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>32463757</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140655_IDPFI_OPE_20250825140244_20250825140322_N__O_0085_0014.nc</path>
+            <checksum algorithm="md5">d9b48f5c351e56419895586c8799703a</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140701_IDPFI_OPE_20250825140303_20250825140332_N__O_0085_0015.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>33445881</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140701_IDPFI_OPE_20250825140303_20250825140332_N__O_0085_0015.nc</path>
+            <checksum algorithm="md5">353aaa9cde3152926d8a654b6ac4171e</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140655_IDPFI_OPE_20250825140207_20250825140254_N__O_0085_0012.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>29778947</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140655_IDPFI_OPE_20250825140207_20250825140254_N__O_0085_0012.nc</path>
+            <checksum algorithm="md5">21d7052014408bd17762886bb3e02c7c</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140722_IDPFI_OPE_20250825140313_20250825140352_N__O_0085_0016.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>33671782</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140722_IDPFI_OPE_20250825140313_20250825140352_N__O_0085_0016.nc</path>
+            <checksum algorithm="md5">ea2de93370e2e3ccdf4e2ad8f5b5f851</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140732_IDPFI_OPE_20250825140352_20250825140421_N__O_0085_0018.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>34216935</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140732_IDPFI_OPE_20250825140352_20250825140421_N__O_0085_0018.nc</path>
+            <checksum algorithm="md5">6e61f7caec52552dcc685d0d9573a75e</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140740_IDPFI_OPE_20250825140411_20250825140441_N__O_0085_0019.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>34351391</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140740_IDPFI_OPE_20250825140411_20250825140441_N__O_0085_0019.nc</path>
+            <checksum algorithm="md5">1733965ca890cb1d63b78070e53efb37</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140733_IDPFI_OPE_20250825140332_20250825140411_N__O_0085_0017.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>34482586</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140733_IDPFI_OPE_20250825140332_20250825140411_N__O_0085_0017.nc</path>
+            <checksum algorithm="md5">3883df08f8541ba2346174cfd10e46af</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140754_IDPFI_OPE_20250825140421_20250825140511_N__O_0085_0020.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>34115157</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140754_IDPFI_OPE_20250825140421_20250825140511_N__O_0085_0020.nc</path>
+            <checksum algorithm="md5">f9ed8c2bca29d4db081f8a49fd3874c2</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140755_IDPFI_OPE_20250825140441_20250825140521_N__O_0085_0021.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>35329545</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140755_IDPFI_OPE_20250825140441_20250825140521_N__O_0085_0021.nc</path>
+            <checksum algorithm="md5">7caaab66bce26ce45859bdf3440377f7</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140803_IDPFI_OPE_20250825140501_20250825140540_N__O_0085_0022.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>35845793</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140803_IDPFI_OPE_20250825140501_20250825140540_N__O_0085_0022.nc</path>
+            <checksum algorithm="md5">211d57a4c002f0f524e98876c2e956ef</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140831_IDPFI_OPE_20250825140511_20250825140600_N__O_0085_0023.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>36688111</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140831_IDPFI_OPE_20250825140511_20250825140600_N__O_0085_0023.nc</path>
+            <checksum algorithm="md5">ac81c02be808e0e18d03ae657350271f</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140842_IDPFI_OPE_20250825140530_20250825140619_N__O_0085_0024.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>35939807</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140842_IDPFI_OPE_20250825140530_20250825140619_N__O_0085_0024.nc</path>
+            <checksum algorithm="md5">1d693f4acd301cbb7798b3bf717d9550</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140902_IDPFI_OPE_20250825140540_20250825140629_N__O_0085_0025.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>35345803</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140902_IDPFI_OPE_20250825140540_20250825140629_N__O_0085_0025.nc</path>
+            <checksum algorithm="md5">f1bc7dca97e56131679344b1daae5b54</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140917_IDPFI_OPE_20250825140610_20250825140707_N__O_0085_0027.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>35686798</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140917_IDPFI_OPE_20250825140610_20250825140707_N__O_0085_0027.nc</path>
+            <checksum algorithm="md5">f6fe90a8a441a3fcf17275914558ba33</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140911_IDPFI_OPE_20250825140600_20250825140648_N__O_0085_0026.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>36729101</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140911_IDPFI_OPE_20250825140600_20250825140648_N__O_0085_0026.nc</path>
+            <checksum algorithm="md5">b4888f940fb24ef02c9042a290dd4174</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140931_IDPFI_OPE_20250825140648_20250825140744_N__O_0085_0029.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>31216046</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140931_IDPFI_OPE_20250825140648_20250825140744_N__O_0085_0029.nc</path>
+            <checksum algorithm="md5">e960412afcb82b5f7d608a2a481f340d</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140931_IDPFI_OPE_20250825140629_20250825140735_N__O_0085_0028.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>34817165</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825140931_IDPFI_OPE_20250825140629_20250825140735_N__O_0085_0028.nc</path>
+            <checksum algorithm="md5">68e9bce82a41859c8793a43cbdc997c4</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141008_IDPFI_OPE_20250825140658_20250825140801_N__O_0085_0030.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>28113035</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141008_IDPFI_OPE_20250825140658_20250825140801_N__O_0085_0030.nc</path>
+            <checksum algorithm="md5">fd50df9a19084610959b0f3dd464188e</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141034_IDPFI_OPE_20250825140801_20250825140850_N__O_0085_0034.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>25451677</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141034_IDPFI_OPE_20250825140801_20250825140850_N__O_0085_0034.nc</path>
+            <checksum algorithm="md5">4aee16a02cff8040c248a77209e02078</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141034_IDPFI_OPE_20250825140744_20250825140842_N__O_0085_0033.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>27076212</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141034_IDPFI_OPE_20250825140744_20250825140842_N__O_0085_0033.nc</path>
+            <checksum algorithm="md5">099648bd5af422b4566e18b0e94f0e19</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141034_IDPFI_OPE_20250825140726_20250825140826_N__O_0085_0032.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>26298067</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141034_IDPFI_OPE_20250825140726_20250825140826_N__O_0085_0032.nc</path>
+            <checksum algorithm="md5">0757130b331d8490a45f23a04292b6c5</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141114_IDPFI_OPE_20250825140917_20250825140935_N__O_0085_0040.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>3792391</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141114_IDPFI_OPE_20250825140917_20250825140935_N__O_0085_0040.nc</path>
+            <checksum algorithm="md5">f34649a4e2eb40404c7f7e507d105599</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141031_IDPFI_OPE_20250825140716_20250825140810_N__O_0085_0031.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>27294377</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141031_IDPFI_OPE_20250825140716_20250825140810_N__O_0085_0031.nc</path>
+            <checksum algorithm="md5">49a972d76e5c6e50079b18bd5827c933</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141114_IDPFI_OPE_20250825140904_20250825140935_N__O_0085_0039.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>12422517</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141114_IDPFI_OPE_20250825140904_20250825140935_N__O_0085_0039.nc</path>
+            <checksum algorithm="md5">390c9f101681c71ae9349b0767c53be6</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141109_IDPFI_OPE_20250825140842_20250825140924_N__O_0085_0037.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>20340536</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141109_IDPFI_OPE_20250825140842_20250825140924_N__O_0085_0037.nc</path>
+            <checksum algorithm="md5">2856343893b480bde1b56ca274fe8e82</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141113_IDPFI_OPE_20250825140850_20250825140929_N__O_0085_0038.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>17201478</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141113_IDPFI_OPE_20250825140850_20250825140929_N__O_0085_0038.nc</path>
+            <checksum algorithm="md5">f2f65a3bbcd2b43e41c85c8e9a437505</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141106_IDPFI_OPE_20250825140826_20250825140911_N__O_0085_0036.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>22960125</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141106_IDPFI_OPE_20250825140826_20250825140911_N__O_0085_0036.nc</path>
+            <checksum algorithm="md5">8d02f7a181e026d6f1ff3b1dda09b36d</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--QCK-IMAGE-RGB1--PNG_C_EUMT_20250825141203_IDPFI_OPE_20250825140007_20250825140935_N__O_0085_0000.jpg">
+            <fileType>Browse</fileType>
+            <format>JPEG</format>
+            <size>48997</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--QCK-IMAGE-RGB1--PNG_C_EUMT_20250825141203_IDPFI_OPE_20250825140007_20250825140935_N__O_0085_0000.jpg</path>
+        </dataObject>
+        <dataObject ID="quicklooks">
+            <fileType>Other</fileType>
+            <format>FILESYSTEM</format>
+            <size>2560792</size>
+            <path>quicklooks</path>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141102_IDPFI_OPE_20250825140810_20250825140904_N__O_0085_0035.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>24612221</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-BODY---NC4E_C_EUMT_20250825141102_IDPFI_OPE_20250825140810_20250825140904_N__O_0085_0035.nc</path>
+            <checksum algorithm="md5">3767714a92bd5425e4a57655d5c9db85</checksum>
+        </dataObject>
+        <dataObject ID="W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-TRAIL---NC4E_C_EUMT_20250825140330_IDPFI_OPE_20250825140007_20250825140935_N__O_0085_0041.nc">
+            <fileType>Data</fileType>
+            <format>NetCDF</format>
+            <size>442938</size>
+            <path>W_XX-EUMETSAT-Darmstadt,IMG+SAT,MTI1+FCI-1C-RRAD-HRFI-FD--CHK-TRAIL---NC4E_C_EUMT_20250825140330_IDPFI_OPE_20250825140007_20250825140935_N__O_0085_0041.nc</path>
+            <checksum algorithm="md5">122b3ffdaba96a42149d4f1ffc3bcc4f</checksum>
+        </dataObject>
+    </dataSection>
+    <eopmetadataSection>
+        <path>EOPMetadata.xml</path>
+    </eopmetadataSection>
+</informationPackage>
