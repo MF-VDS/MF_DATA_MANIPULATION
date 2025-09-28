@@ -34,22 +34,22 @@ Cela fera une copie locale de tous les fichiers pertinents.
 ### Environnement Python
 
 Python permet aux utilisateurs de créer des environnements spécifiques adaptés à leurs applications.
-Ces didacticiels inclus dans cette collection nécessitent un certain nombre de packages non standard. Dans ce répertoire, les utilisateurs trouveront un fichier *env_MF_stage.yaml* qui pourra être utilisé pour
+Ces didacticiels inclus dans cette collection nécessitent un certain nombre de packages non standard. Dans ce répertoire, les utilisateurs trouveront un fichier *env_MF_teledetection.yaml* qui pourra être utilisé pour
 construire un environnement qui installera tous les packages requis.
 
-Pour construire l'environnement, vous devez ouvrir un **terminal** (Linux/OSx) et accéder au dossier du référentiel que vous avez téléchargé dans la section **Installation** ci-dessus. Dans ce dossier se trouve un fichier appelé **env_MF_stage.yml**. Celui-ci contient toutes les informations dont nous avons besoin pour installer les packages concernés.
+Pour construire l'environnement, vous devez ouvrir un **terminal** (Linux/OSx) et accéder au dossier du référentiel que vous avez téléchargé dans la section **Installation** ci-dessus. Dans ce dossier se trouve un fichier appelé **env_MF_teledetection.yml**. Celui-ci contient toutes les informations dont nous avons besoin pour installer les packages concernés.
 
 Pour créer notre environnement Python, depuis le terminal (OSx/Linux), vous pouvez exécuter :
 (Le gestionnaire de packages conda peut être lent)
 
-`conda env create -f env_MF_stage.yml `
+`conda env create -f env_MF_teledetection.yml `
 
-Cela créera un environnement Python appelé *env_MF_stage**. L'environnement ne sera pas activé par défaut. Pour l'activer, exécutez :
+Cela créera un environnement Python appelé *env_MF_teledetection**. L'environnement ne sera pas activé par défaut. Pour l'activer, exécutez :
 
-`conda activate env_MF_stage` ( parfois /opt/conda/env_MF_stage )
+`conda activate env_MF_teledetection` ( parfois /opt/conda/env_MF_teledetection )
 et
 
-`python -m ipykernel install --user --name=env_MF_stage` (Utilisation de ce kernel dans le noteboook)
+`python -m ipykernel install --user --name=env_MF_teledetection` (Utilisation de ce kernel dans le noteboook)
 
 Maintenant, vous êtes prêts!
 
