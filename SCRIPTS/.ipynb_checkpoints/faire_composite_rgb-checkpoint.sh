@@ -16,7 +16,7 @@ mois=09
 jourj=27
 choix=facon
 nomdomaine=afrique
-latdomaine='10'
+latdomaine='25'
 londomaine='10'
 
 for hh in 12 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
@@ -31,7 +31,7 @@ do
     if [ "$mm" = "40" ] ; then minutem=4 ; fi
     if [ "$mm" = "50" ] ; then minutem=5 ; fi
 
-        for compo in dust #geo_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection
+        for compo in true_color #true_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection dust
         do
 
             nomcompo=${compo}
@@ -67,7 +67,7 @@ do
             fi
             echo minute= $minutem
 
-            python  creer_img_fci_satpy_chunk.py $compo ${annee} ${mois} ${jourj} ${hh} ${minutem} 2000 
+            python  satpy_composites.py $compo ${annee} ${mois} ${jourj} ${hh} ${minutem} 2000 
         
             echo -n "$fic : "
 

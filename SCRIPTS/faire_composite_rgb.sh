@@ -31,7 +31,7 @@ do
     if [ "$mm" = "40" ] ; then minutem=4 ; fi
     if [ "$mm" = "50" ] ; then minutem=5 ; fi
 
-        for compo in dust #geo_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection
+        for compo in true_color #true_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection dust
         do
 
             nomcompo=${compo}
