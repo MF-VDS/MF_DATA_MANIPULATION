@@ -38,7 +38,7 @@ do
 
     #lancement script python satpy
     # date à modifier dans ce script également si besoin
-    python  sandwich2.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} #> /dev/null 2>1
+    python  sandwich.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} #> /dev/null 2>1
         
     
 

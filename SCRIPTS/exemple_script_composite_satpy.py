@@ -24,7 +24,7 @@ os.environ['PROJ_LIB'] = '/opt/conda/env_MF_stage/share/proj'
 
 shell=True
 
-input = '/stockage/DATA/chunks_mtg_20240923/'
+input = '/stockage/DATA/202509271200/'
 
 download_dir = os.path.join(os.getcwd(), "../RESULTS")
 os.makedirs(download_dir, exist_ok=True)
@@ -33,10 +33,10 @@ output = '../RESULTS'
 
 composite_name =sys.argv[1]
 
-annee='2024'
+annee='2025'
 mois='09'
-jour='23'
-heure='14'
+jour='27'
+heure='12'
 
 print('Traitement de ' + composite_name + ' en cours, le ' + jour + '/' + mois + '/' + annee + ' à '+ heure + '00UTC' )
 
@@ -70,7 +70,7 @@ print(' --- Redimmensionnement et découpe')
 cmd1 = ['gdalwarp', '-overwrite', '-ts', '1000', '1000', filename + '.tif', filename + '_globe.jpg' ]
 subprocess.run(cmd1)
 
-cmd2 = [ 'gdalwarp', '-overwrite',  '-t_srs', "EPSG:4326", '-te', '2', '5', '18', '16',  filename + '.tif', filename + '_decoupe.tif' ]
+cmd2 = [ 'gdalwarp', '-overwrite',  '-t_srs', "EPSG:4326", '-te', '-8', '10', '8', '19',  filename + '.tif', filename + '_decoupe.tif' ]
 subprocess.run(cmd2)
 
 cmd3 = [ 'gdal_rasterize', '-q', '-b', '1', '-burn', '255', '-b', '2', '-burn', '255', '-b', '3', '-burn', '255', '-l', 'world-administrative-boundaries', '../OUTILS/boundary/world-administrative-boundaries.shp', filename + '_decoupe.tif' ]
