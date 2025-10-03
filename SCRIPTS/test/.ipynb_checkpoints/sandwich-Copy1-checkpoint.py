@@ -60,6 +60,7 @@ scn = Scene(filenames=glob.glob(os.path.join(input, '*.nc')), reader='fci_l1c_nc
 scn.load(['vis_06', 'ir_105'])
 
 scn_res = scn.resample(scn['vis_06'].area)
+
 vis = scn_res['vis_06'].values.astype('float32')
 ir  = scn_res['ir_105'].values.astype('float32')
 
@@ -162,7 +163,6 @@ sandwich[mask] = vis_rgb[mask] * ir_rgb[mask]
 #plt.imsave("../RESULTS/sandwichflip.png", sandwichflip)
 
 # mettre les 2 sur la grille IR
-#scn_res = scn.resample(scn['vis_06'].area) # test rc pour ressampler
 scn_res = scn.resample(scn['vis_06'].area)
 # --- Récupérer zone géographique de la donnée ---
 area = scn_res['ir_105'].attrs['area']
