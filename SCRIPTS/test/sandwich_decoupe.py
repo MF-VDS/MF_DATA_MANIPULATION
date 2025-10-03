@@ -16,11 +16,46 @@ from pyresample import AreaDefinition
 import matplotlib.colors as mcolors
 import xarray as xr
 import glob
+from pyresample import create_area_def
 
 os.environ['PATH'] = f"/opt/conda/env_MF_teledetection/bin:{os.environ['PATH']}" 
 os.environ['PATH'] = f"~/.conda/envs/env_MF_teledetection/bin:{os.environ['PATH']}"
 os.environ['GDAL_DATA'] = '/opt/conda/env_MF_teledetection/share/gdal'
 os.environ['PROJ_LIB'] = '/opt/conda/env_MF_teledetection/share/proj'
+
+
+
+from pyresample import create_area_def
+
+# Projection Lambert azimutal équivalent, centrée sur l’Europe
+proj_dict = {
+    'proj': 'laea',
+    'lat_0': 46,    # latitude du centre
+    'lon_0': 2,    # longitude du centre
+    'ellps': 'WGS84'
+}
+
+# Étendue en mètres : (xmin, ymin, xmax, ymax)
+# Ici environ Europe de l’Ouest
+area_extent = (-2500000, -2000000, 2500000, 2500000)
+
+# Résolution en mètres
+resolution = 500
+x_size = int((area_extent[2] - area_extent[0]) / resolution)
+y_size = int((area_extent[3] - area_extent[1]) / resolution)
+
+# Définition de l’aire
+area_def = create_area_def(
+    area_id="europe_western",   # identifiant (ok en texte)
+    description="Europe Western",  # description (texte libre)
+    projection=proj_dict,
+    width=x_size,
+    height=y_size,
+    area_extent=area_extent,
+    units="m"
+)
+
+
 
 shell=True
 
@@ -59,7 +94,11 @@ scn = Scene(filenames=glob.glob(os.path.join(input, '*.nc')), reader='fci_l1c_nc
 # --- Chargement des données ---
 scn.load(['vis_06', 'ir_105'])
 
-scn_res = scn.resample(scn['vis_06'].area)
+#scn_res = scn.resample(scn['vis_06'].area)
+# Resampling de la scène
+scn_res = scn.resample(area_def) 
+
+
 vis = scn_res['vis_06'].values.astype('float32')
 ir  = scn_res['ir_105'].values.astype('float32')
 

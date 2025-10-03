@@ -31,7 +31,7 @@ do
     if [ "$mm" = "40" ] ; then minutem=4 ; fi
     if [ "$mm" = "50" ] ; then minutem=5 ; fi
 
-        for compo in true_color #true_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection dust
+        for compo in dust #true_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection dust
         do
 
             nomcompo=${compo}
@@ -76,15 +76,7 @@ do
 
             echo "$fic domaine ${nomdomaine}"
             gdalwarp -q -overwrite -t_srs "+proj=ortho lat_0=${latdomaine} lon_0=${londomaine}" -te -3200000 -1800000 3200000 1800000 -r cubic  ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}.tif ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.tif
-            #if [ ! -e ${repdest}/${compo}_${nomdomaine}_contour.png ]
-            #then
-            #    echo "contour------------"
-            #    ./creer_image_transparente_aveccontour.sh ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.tif ${repdest}/${compo}_${nomdomaine}_contour.tif /data/meta/shapefiles/10m_coastline.shp
-            #    convert -quiet ${repdest}/${compo}_${nomdomaine}_contour.tif ${repdest}/${compo}_${nomdomaine}_contour.png
-            #fi
-            #convert -quiet ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.tif ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_0.png
-            #composite -quiet -geometry +0+0 ${repdest}/${compo}_${nomdomaine}_contour.png ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_0.png ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_1.jpg # ajout contour
-            #convert -quiet ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_1.jpg -font Liberation-Sans-Bold -pointsize 30 -fill '#ffffff'  -annotate +40+50 "MTG $nomcompo / ${annee}${mois}${jourj} - ${hh}${mm}UTC" ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.jpg
+
             convert -quiet ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.tif ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_1.jpg
             convert -quiet ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_1.jpg -font Liberation-Sans-Bold -pointsize 11 -fill '#ffffff'  -annotate +12+12 "MTG $nomcompo / ${annee}${mois}${jourj} - ${hh}${mm}UTC" ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.jpg #ajout dateheure
             convert -resize 1920x1080 ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.jpg ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_1920-1080.png
