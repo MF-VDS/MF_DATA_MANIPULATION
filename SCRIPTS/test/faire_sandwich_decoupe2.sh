@@ -21,7 +21,6 @@ domaine_decoupe='-640000 -360000 640000 360000' # projection ortho
 
 rm ~/MF_DATA_MANIPULATION/RESULTS/*
 
-
 for hh in 10 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
 do
     for mm in 30 #10 20 30 40 50
@@ -40,27 +39,31 @@ do
 
     #lancement script python satpy
     # date à modifier dans ce script également si besoin
-    #python  sandwich_test_3D.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} #> /dev/null 2>1
-    python sandwich_test.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} 0.1 #> /dev/null 2>1 #pour 3d
+    python  sandwich_decoupe2.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} #> /dev/null 2>1
         
     
 
     echo "decoupe tif et creation jpg"
-    mv ../RESULTS/sandwich.tif ../RESULTS/${fic}.tif
-    convert -resize 2000 -flip ../RESULTS/${fic}.tif ../RESULTS/${fic}.jpg > /dev/null 2>1
-    convert -flip ../RESULTS/${fic}.tif ../RESULTS/${fic}_HD.jpg > /dev/null 2>1
+    #mv ../RESULTS/sandwich.tif ../RESULTS/${fic}.tif
+    mv ../RESULTS/sandwich_reproj.tif ../RESULTS/${fic}.tif
+    convert ../RESULTS/${fic}.tif ../RESULTS/${fic}_HD.jpg > /dev/null 2>1
+    #convert -resize 2000 -flip ../RESULTS/${fic}.tif ../RESULTS/${fic}_flip.jpg > /dev/null 2>1
+    convert -resize 2000 ../RESULTS/${fic}.tif ../RESULTS/${fic}.jpg > /dev/null 2>1
+    
+    
+    #convert ../RESULTS/${fic}.tif ../RESULTS/${fic}_HD.jpg > /dev/null 2>1
 
     #decoupe du domaine
     gdalwarp -q -overwrite -t_srs "+proj=ortho lat_0=${latdomaine} lon_0=${londomaine}" -te ${domaine_decoupe} -r cubic  ../RESULTS/${fic}.tif ../RESULTS/${fic}_decoupe.tif > /dev/null 2>1
     #ajout contour trait de cote
-    gdal_rasterize -q -b 1 -burn 255 -b 2 -burn 255 -b 3 -burn 255 -l world-administrative-boundaries ../OUTILS/boundary/world-administrative-boundaries.shp ../RESULTS/${fic}_decoupe.tif > /dev/null 2>1  # frontière blanche
+    gdal_rasterize -q -b 1 -burn 255 -b 2 -burn 255 -b 3 -burn 255 -l world-administrative-boundaries ../OUTILS/boundary/world-administrative-boundaries.shp ../RESULTS/${fic}.tif > /dev/null 2>1  # frontière blanche
 
     #augmentation gamma si besoin
     #gdal_translate -scale -exponent 0.6 ../RESULTS/${fic}_decoupe.tif ../RESULTS/${fic}_gamma_decoupe.tif
 
     #Création jpg et redimmensionnement
-    convert -resize 1920x1080 ../RESULTS/${fic}_decoupe.tif ../RESULTS/${fic}_decoupe.jpg > /dev/null 2>1
-    convert ../RESULTS/${fic}_decoupe.tif ../RESULTS/${fic}_decoupe_HD.jpg > /dev/null 2>1
+    convert -resize 1920x1080 ../RESULTS/${fic}.tif ../RESULTS/${fic}_frontiere.jpg > /dev/null 2>1
+    #convert ../RESULTS/${fic}.tif ../RESULTS/${fic}_HD.jpg > /dev/null 2>1
     #convert -resize 1920x1080 ../RESULTS/${fic}_gamma_decoupe.tif ../RESULTS/${fic}_gamma_decoupe.jpg > /dev/null 2>1
 
     rm -f ../RESULTS/${fic}.tif

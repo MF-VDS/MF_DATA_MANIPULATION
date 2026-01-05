@@ -37,7 +37,9 @@ proj_dict = {
 
 # Étendue en mètres : (xmin, ymin, xmax, ymax)
 # Ici environ Europe de l’Ouest
-area_extent = (-2500000, -2000000, 2500000, 2500000)
+#area_extent = (-2500000, -2000000, 2500000, 2500000) #origine
+area_extent = (-2000000, -1000000, 2000000, 2500000) #origine
+
 
 # Résolution en mètres
 resolution = 500
@@ -54,8 +56,6 @@ area_def = create_area_def(
     area_extent=area_extent,
     units="m"
 )
-
-
 
 shell=True
 

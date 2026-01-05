@@ -19,6 +19,8 @@ domaine_decoupe='-640000 -360000 640000 360000' # projection ortho
 #domaine_decoupe='-1600000 -900000 1600000 900000' #grand domaine
 #domaine_decoupe='-3200000 -1800000 3200000 1800000' #très grand domaine
 
+rm ~/MF_DATA_MANIPULATION/RESULTS/*
+
 
 for hh in 10 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
 do
@@ -38,7 +40,8 @@ do
 
     #lancement script python satpy
     # date à modifier dans ce script également si besoin
-    python  sandwich.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} #> /dev/null 2>1
+    #python  sandwich_test_3D.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} #> /dev/null 2>1
+    python  sandwich_test.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} 0.1 #> /dev/null 2>1 #pour 3d
         
     
 

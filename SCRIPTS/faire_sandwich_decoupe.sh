@@ -19,6 +19,7 @@ domaine_decoupe='-640000 -360000 640000 360000' # projection ortho
 #domaine_decoupe='-1600000 -900000 1600000 900000' #grand domaine
 #domaine_decoupe='-3200000 -1800000 3200000 1800000' #très grand domaine
 
+rm ~/MF_DATA_MANIPULATION/RESULTS/*
 
 for hh in 10 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
 do
@@ -38,15 +39,19 @@ do
 
     #lancement script python satpy
     # date à modifier dans ce script également si besoin
-    python  sandwich_decoupe.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} #> /dev/null 2>1
+    python  sandwich_decoupe2.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} #> /dev/null 2>1
         
     
 
     echo "decoupe tif et creation jpg"
-    mv ../RESULTS/sandwich.tif ../RESULTS/${fic}.tif
-    convert -resize 2000 -flip ../RESULTS/${fic}.tif ../RESULTS/${fic}.jpg > /dev/null 2>1
-    #convert -flip ../RESULTS/${fic}.tif ../RESULTS/${fic}_HD.jpg > /dev/null 2>1
+    #mv ../RESULTS/sandwich.tif ../RESULTS/${fic}.tif
+    mv ../RESULTS/sandwich_reproj.tif ../RESULTS/${fic}.tif
     convert ../RESULTS/${fic}.tif ../RESULTS/${fic}_HD.jpg > /dev/null 2>1
+    convert -resize 2000 -flip ../RESULTS/${fic}.tif ../RESULTS/${fic}_flip.jpg > /dev/null 2>1
+    convert -resize 2000 ../RESULTS/${fic}.tif ../RESULTS/${fic}.jpg > /dev/null 2>1
+    convert -flip ../RESULTS/${fic}.tif ../RESULTS/${fic}_flip_HD.jpg > /dev/null 2>1
+    
+    #convert ../RESULTS/${fic}.tif ../RESULTS/${fic}_HD.jpg > /dev/null 2>1
 
     #decoupe du domaine
     gdalwarp -q -overwrite -t_srs "+proj=ortho lat_0=${latdomaine} lon_0=${londomaine}" -te ${domaine_decoupe} -r cubic  ../RESULTS/${fic}.tif ../RESULTS/${fic}_decoupe.tif > /dev/null 2>1

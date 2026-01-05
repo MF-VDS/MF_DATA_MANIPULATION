@@ -17,6 +17,7 @@ import matplotlib.colors as mcolors
 import xarray as xr
 import glob
 
+
 os.environ['PATH'] = f"/opt/conda/env_MF_teledetection/bin:{os.environ['PATH']}" 
 os.environ['PATH'] = f"~/.conda/envs/env_MF_teledetection/bin:{os.environ['PATH']}"
 os.environ['GDAL_DATA'] = '/opt/conda/env_MF_teledetection/share/gdal'
@@ -47,11 +48,6 @@ reader_to_use = "fci_l1c_nc"
 
 filename = (output + '/RGB_sadnwich' )
 
-#myfiles = find_files_and_readers(base_dir=input,
-#                                 start_time=datetime(yyyy,mm,dd,hh,min),
-#                                 end_time=datetime(yyyy,mm,dd,hh,minn),
-#                                 reader=reader_to_use)
-
 # Charger les données
 #scn = Scene(filenames=myfiles, reader='fci_l1c_nc')
 scn = Scene(filenames=glob.glob(os.path.join(input, '*.nc')), reader='fci_l1c_nc')
@@ -62,17 +58,6 @@ scn.load(['vis_06', 'ir_105'])
 scn_res = scn.resample(scn['vis_06'].area)
 vis = scn_res['vis_06'].values.astype('float32')
 ir  = scn_res['ir_105'].values.astype('float32')
-
-##test ajout gamma seulement au vis 06
-## --- Normalisation VIS ---
-#vis_min, vis_max = np.nanmin(vis), np.nanmax(vis)
-#vis_norm = (vis - vis_min) / (vis_max - vis_min)
-## --- Correction gamma (uniquement sur le VIS) ---
-#gamma = 2.0
-#vis_norm = np.power(vis_norm, 1/gamma)
-## RGB du visible (éclairci)
-#vis_rgb = np.dstack([vis_norm]*3) 
-
 
 # --- VIS normalisé + gamma ---
 vis_min, vis_max = np.nanmin(vis), np.nanmax(vis)
@@ -137,15 +122,6 @@ mask = ir_c <= -20
 ir_rgb = cmap_custom(norm_custom(ir_c))[..., :3] 
 ########################################################## fin palette à façon
 
-
-# --- Superposition IR sur le visible seulement là où mask=True ---
-#ajout transparence
-#alpha_ir = 0.85  # 0 = IR invisible, 1 = IR opaque, exmeple 0.6 = 60% d IR
-#sandwich = vis_rgb.copy()
-#sandwich[mask] = (
-#    (1 - alpha_ir) * vis_rgb[mask] + alpha_ir * ir_rgb[mask]
-#)
-
 # --- Fusion type "sandwich multiplicatif" ---
 # Ici on multiplie la luminance VIS par la couleur IR
 sandwich = vis_rgb * ir_rgb
@@ -153,13 +129,6 @@ sandwich = vis_rgb * ir_rgb
 # Appliquer que là où mask=True
 sandwich = vis_rgb.copy()
 sandwich[mask] = vis_rgb[mask] * ir_rgb[mask] 
-
-
-
-# --- Retour vertical si besoin ---
-#sandwichflip = np.flipud(sandwich)
-# --- Sauvegarde ---
-#plt.imsave("../RESULTS/sandwichflip.png", sandwichflip)
 
 # mettre les 2 sur la grille IR
 #scn_res = scn.resample(scn['vis_06'].area) # test rc pour ressampler
