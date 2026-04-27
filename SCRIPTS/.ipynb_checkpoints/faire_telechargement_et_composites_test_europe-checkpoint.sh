@@ -8,27 +8,28 @@ set -x
 PYTHONPATH=/opt/conda/env_MF_teledetection 
 
 annee=2026
-mois=01
+mois=04
 jourj=27
 contour=oui
 
 #nomdomaine=france ; latdomaine='46.3' ; londomaine='2.7' ;  fenetre="-650000 -650000 650000 650000" ; sizeH='2000' ; sizeL='2000' ;
 #nomdomaine=france ; latdomaine='46.5' ; londomaine='1' ;  fenetre="-1120000 -630000 1120000 630000" ; sizeH='1920' ; sizeL='1080' ;
-nomdomaine=europe ; latdomaine='46.5' ; londomaine='10' ;  fenetre="-2080000 -1170000 1920000 1080000" ; sizeH='1920' ; sizeL='1080' ;
+nomdomaine=france ; latdomaine='47.5' ; londomaine='1' ;  fenetre="-1120000 -630000 1120000 630000" ; sizeH='1920' ; sizeL='1080' ;
+#nomdomaine=europe ; latdomaine='46.5' ; londomaine='1' ;  fenetre="-2080000 -1170000 1920000 1080000" ; sizeH='1920' ; sizeL='1080' ;
 
 #rm ~/MF_DATA_MANIPULATION/RESULTS/* 2>/dev/null
 font='../OUTILS/Police_Marianne/Marianne-Bold.otf'
 
-for hh in 11 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
+for hh in 07 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
 do
-    for mm in 00 #10 # 20 30 40 50
+    for mm in 20 #10 # 20 30 40 50
     do
         if [ "$mm" = "00" ] ; then minutem=0 ; minutem2=1 ; fi
         if [ "$mm" = "10" ] ; then minutem=1 ; minutem2=2 ; fi
         if [ "$mm" = "20" ] ; then minutem=2 ; minutem2=3 ; fi
         if [ "$mm" = "30" ] ; then minutem=3 ; minutem2=4 ; fi
         if [ "$mm" = "40" ] ; then minutem=4 ; minutem2=5 ; fi
-        if [ "$mm" = "50" ] ; then minutem=5 ; minutem2=0 ; fi
+        if [ "$mm" = "50" ] ; then minutem=5 ; minutem2=0 ; fi   # ne fonctionne pas
             
         repdest=RESULTS
         repsource="/stockage/DATA/${annee}${mois}${jourj}"
@@ -55,14 +56,14 @@ do
             eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0038.nc' --output ${repsource} --threads 10
             eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0039.nc' --output ${repsource} --threads 10
     
-            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0032.nc' --output ${repsource} --threads 10
-            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0033.nc' --output ${repsource} --threads 10
-            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0034.nc' --output ${repsource} --threads 10
-            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0035.nc' --output ${repsource} --threads 10 #france
-            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0036.nc' --output ${repsource} --threads 10 #france
-            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0037.nc' --output ${repsource} --threads 10 #france
-            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0038.nc' --output ${repsource} --threads 10
-            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0039.nc' --output ${repsource} --threads 10
+         #   eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0032.nc' --output ${repsource} --threads 10
+         #   eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0033.nc' --output ${repsource} --threads 10
+         #   eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0034.nc' --output ${repsource} --threads 10
+         #   eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0035.nc' --output ${repsource} --threads 10 #france
+         #   eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0036.nc' --output ${repsource} --threads 10 #france
+         #   eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0037.nc' --output ${repsource} --threads 10 #france
+         #   eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0038.nc' --output ${repsource} --threads 10
+         #   eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0039.nc' --output ${repsource} --threads 10
             mv ${repsource}/*/* ${repsource}/
             find ${repsource}/ -type d -empty -delete
         else
@@ -72,7 +73,7 @@ do
         echo "Création de ${fic}...  "
 
         
-        for compo in convection day_severe_storms #cimss_cloud_type true_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection dust
+        for compo in true_color #convection day_severe_storms cimss_cloud_type true_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection dust
         do
 
             nomcompo=${compo}
@@ -108,7 +109,7 @@ do
             fi
             echo minute= $minutem
 
-            python  satpy_composites.py $compo ${annee} ${mois} ${jourj} ${hh} ${minutem} 2000 
+            python  satpy_composites.py $compo ${annee} ${mois} ${jourj} ${hh} ${minutem} 1000 
         
             echo -n "$fic : decoupe tif et creation jpg"
             mv ${repdest}/${compo}_${annee}${mois}${jourj}_${hh}${mm}_satpy.tif ${repdest}/${fic}.tif
