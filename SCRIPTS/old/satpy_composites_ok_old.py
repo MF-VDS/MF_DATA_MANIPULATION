@@ -16,13 +16,12 @@ varres=sys.argv[7]
 resol=int(varres)
 
 # Initialise Scene
-#path_to_chunks = '/stockage/DATA/'+yyyy+mm+dd+hh+min+'0/'
-path_to_chunks = '/stockage/DATA/'+yyyy+mm+dd+'/'
+path_to_chunks = '/stockage/DATA/'+yyyy+mm+dd+hh+min+'0/'
 
 print(os.path.join(path_to_chunks, '*.nc'))
 
-scn = Scene(filenames=glob.glob(os.path.join(path_to_chunks, '*.nc')), reader='fci_l1c_nc')
 #scn = Scene(filenames=glob.glob(os.path.join(path_to_chunks, 'Mmultic*km*'+yyyy+mm+dd+hh+min+'.nc')), reader='mtg_netcdficare')
+scn = Scene(filenames=glob.glob(os.path.join(path_to_chunks, '*.nc')), reader='fci_l1c_nc')
 #scn = Scene(filenames=glob.glob(os.path.join(path_to_chunks, '*BODY*OPE_'+yyyy+mm+dd+hh+'0*.nc')), reader='fci_l1c_nc')
 
 # Load a composite

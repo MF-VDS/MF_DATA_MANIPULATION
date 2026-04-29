@@ -12,12 +12,11 @@ PYTHONPATH=/opt/conda/env_MF_teledetection # A modifier !!!
 #hh=$(date +%H)
 
 annee=2025
-mois=09
-jourj=27
+mois=11
+jourj=12
 choix=facon
-nomdomaine=afrique
-latdomaine='25'
-londomaine='10'
+
+nomdomaine=France ; latdomaine='45' ; londomaine='0'
 
 for hh in 12 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
 do
