@@ -20,3 +20,4 @@ dependencies:
   - libgdal
   - libgdal-hdf5
   - eumdac
+  - ffmpeg
