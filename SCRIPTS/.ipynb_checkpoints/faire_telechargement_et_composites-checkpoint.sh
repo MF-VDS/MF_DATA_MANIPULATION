@@ -9,7 +9,7 @@ PYTHONPATH=/opt/conda/env_MF_teledetection
 
 annee=2026
 mois=05
-jourj=07
+jourj=20
 contour=oui
 
 #nomdomaine=france ; latdomaine='46.3' ; londomaine='2.7' ;  fenetre="-650000 -650000 650000 650000" ; sizeH='2000' ; sizeL='2000' ;
@@ -19,9 +19,9 @@ nomdomaine=europe ; latdomaine='46.5' ; londomaine='1' ;  fenetre="-2080000 -117
 #rm ~/MF_DATA_MANIPULATION/RESULTS/* 2>/dev/null
 font='../OUTILS/Police_Marianne/Marianne-Bold.otf'
 
-for hh in 11 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
+for hh in 08 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
 do
-    for mm in 30 #10 # 20 30 40 50
+    for mm in 00 #10 # 20 30 40 50
     do
         if [ "$mm" = "00" ] ; then minutem=0 ; minutem2=1 ; fi
         if [ "$mm" = "10" ] ; then minutem=1 ; minutem2=2 ; fi
@@ -44,7 +44,7 @@ do
         if [ -z "$(ls -A ${repsource}/*OPE*${annee}${mois}${jourj}${hh}${minutem}* 2>/dev/null)" ]
         then
         	echo "Téléchargement des données ${annee}${mois}${jourj}_${hh}${mm}"
-            eumdac set-credentials ogQ9Mpf0f1GsPIyfg0w4md2ZJdsa b9uXQcvk7cmEMmRJ2S2kU90qq8oa #identifiant rudy coste
+            eumdac set-credentials `cat ~/DIVERS/credentials_rc.txt` #identifiant rudy coste
         
             eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0033.nc' --output ${repsource} --threads 10
             eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0034.nc' --output ${repsource} --threads 10
