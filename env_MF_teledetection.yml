@@ -21,3 +21,4 @@ dependencies:
   - libgdal-hdf5
   - eumdac
   - ffmpeg
+  - attr
