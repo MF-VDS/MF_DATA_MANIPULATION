@@ -11,14 +11,14 @@ PYTHONPATH=/opt/conda/env_MF_teledetection # A modifier !!!
 #d=$(date +%d)
 #hh=$(date +%H)
 
-annee=2025
-mois=11
-jourj=12
+annee=2026
+mois=05
+jourj=27
 choix=facon
 
 nomdomaine=France ; latdomaine='45' ; londomaine='0'
 
-for hh in 12 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
+for hh in 14 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
 do
     for mm in 00 #10 20 30 40 50
     do
@@ -30,7 +30,7 @@ do
     if [ "$mm" = "40" ] ; then minutem=4 ; fi
     if [ "$mm" = "50" ] ; then minutem=5 ; fi
 
-        for compo in dust #true_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection dust
+        for compo in cloud_phase true_color day_severe_storm #true_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection dust day_severe_storm
         do
 
             nomcompo=${compo}
@@ -45,6 +45,7 @@ do
             if [ "$compo" = "airmass" ] ;  then nomcompo="Airmass RGB" ; fi
             if [ "$compo" = "nMiPhy" ] ;  then nomcompo="Fog / Low clouds RGB" ; fi
             if [ "$compo" = "fire_temperature" ] ;  then nomcompo="Fire temperature RGB" ; fi
+            if [ "$compo" = "day_severe_storm" ] ;  then nomcompo="Day Severe Storm RGB" ; fi
 
             repdest=../RESULTS
             fic=${compo}_${annee}${mois}${jourj}_${hh}${mm}_mtgi1_satpy

@@ -51,7 +51,7 @@ et
 
 `python -m ipykernel install --user --name=env_MF_teledetection` (Utilisation de ce kernel dans le noteboook)
 
-Maintenant, vous êtes prêts!
+Maintenant, vous êtes prêts !
 
 ### Utiliser Jupyter Notebook
 

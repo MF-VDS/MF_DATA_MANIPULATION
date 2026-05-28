@@ -1,10 +1,10 @@
-# Manipulation et traitement des données brutes satellitaires de niveau 1
+# Manipulation des données satellitaires
 
 
 <hr>
 
 
-Manipulation et traitement des données brutes satellitaires de niveau 1
+Manipulation des données satellitaires
 
 Météo-France
 
@@ -51,7 +51,7 @@ et
 
 `python -m ipykernel install --user --name=env_MF_teledetection` (Utilisation de ce kernel dans le noteboook)
 
-Maintenant, vous êtes prêts!
+Maintenant, vous êtes prêts !
 
 ### Utiliser Jupyter Notebook
 

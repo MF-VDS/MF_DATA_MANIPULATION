@@ -7,25 +7,27 @@
 
 PYTHONPATH=/opt/conda/env_MF_teledetection 
 
-annee=2025
-mois=06
-jourj=25
+annee=2026
+mois=05
+jourj=27
 #Definir zone centre de la zone à découper
-latdomaine='46'
-londomaine='2'
+latdomaine='46.5'
+londomaine='1'
 contour=oui
-domaine_decoupe='-640000 -360000 640000 360000' # projection ortho
+#domaine_decoupe='-640000 -360000 640000 360000' # projection ortho
+domaine_decoupe='-2080000 -1170000 1920000 1080000' # projection ortho
+
 #domaine_decoupe='-640000 -360000 640000 360000' #petit domaine
 #domaine_decoupe='-800000 -450000 800000 450000' #petit domaine 
 #domaine_decoupe='-1600000 -900000 1600000 900000' #grand domaine
 #domaine_decoupe='-3200000 -1800000 3200000 1800000' #très grand domaine
 
-rm ~/MF_DATA_MANIPULATION/RESULTS/* 2>/dev/null
+#rm ~/MF_DATA_MANIPULATION/RESULTS/* 2>/dev/null
 
 
-for hh in 18 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
+for hh in 16 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
 do
-    for mm in 20 #10 20 30 40 50
+    for mm in 10 #10 20 30 40 50
     do
     if [ "$mm" = "00" ] ; then minutem=0 ; minutem2=1 ; fi
     if [ "$mm" = "10" ] ; then minutem=1 ; minutem2=2 ; fi
@@ -39,26 +41,35 @@ do
     fic=${annee}${mois}${jourj}_${hh}${mm}_mtgi1_satpy_sandwich
 
     #creation repertoire RES si besoin
-    if [ ! -d "${repsource}" ]
-    	then
-    	mkdir ${repsource}
-    fi
+        if [ ! -d "${repsource}" ]
+        	then
+        	mkdir ${repsource}
+        fi
+    
+        #telechargement des données
+        if [ -z "$(ls -A ${repsource}/*OPE*${annee}${mois}${jourj}${hh}${minutem}* 2>/dev/null)" ]
+        then
+        	echo "Téléchargement des données ${annee}${mois}${jourj}_${hh}${mm}"
+            eumdac set-credentials `cat ~/divers/credentials_rc.txt` #identifiant rudy coste
+            eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0033.nc' --output ${repsource} --threads 10
+            eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0034.nc' --output ${repsource} --threads 10
+            eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0035.nc' --output ${repsource} --threads 10 #france
+            eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0036.nc' --output ${repsource} --threads 10 #france
+            eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0037.nc' --output ${repsource} --threads 10 #france
+            eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0038.nc' --output ${repsource} --threads 10
 
-    #telechargement des données
-    if [ -z "$(ls -A "${repsource}" 2>/dev/null)" ]
-    then
-    	echo "Téléchargement des données ${annee}${mois}${jourj}_${hh}${mm}"
-        eumdac set-credentials ogQ9Mpf0f1GsPIyfg0w4md2ZJdsa b9uXQcvk7cmEMmRJ2S2kU90qq8oa #identifiant rudy coste
-        eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0033.nc' --output ${repsource} --threads 5
-        eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0034.nc' --output ${repsource} --threads 5
-        eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0035.nc' --output ${repsource} --threads 5
-        eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0036.nc' --output ${repsource} --threads 5
-        eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0037.nc' --output ${repsource} --threads 5
-        mv ${repsource}/*/* ${repsource}/
-        find ${repsource}/ -type d -empty -delete
-    else
-        echo "Données ${annee}${mois}${jourj}_${hh}${mm} déjà téléchargées"
-    fi    
+            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0033.nc' --output ${repsource} --threads 10
+            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0034.nc' --output ${repsource} --threads 10
+            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0035.nc' --output ${repsource} --threads 10 #france
+            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0036.nc' --output ${repsource} --threads 10 #france
+            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0037.nc' --output ${repsource} --threads 10 #france
+            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0038.nc' --output ${repsource} --threads 10
+            
+            mv ${repsource}/*/* ${repsource}/
+            find ${repsource}/ -type d -empty -delete
+        else
+            echo "Données ${annee}${mois}${jourj}_${hh}${mm} déjà téléchargées"
+        fi    
 
     
 
