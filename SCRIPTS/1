@@ -1,21 +1,2 @@
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Point outside of projection domain
-ERROR 1: Reprojection failed, err = 2050, further errors will be suppressed on the transform object.
-ERROR 1: Full reprojection failed, but partial is possible if you define OGR_ENABLE_PARTIAL_REPROJECTION configuration option to TRUE
+WARNING: The convert command is deprecated in IMv7, use "magick" instead of "convert" or "magick convert"
+
