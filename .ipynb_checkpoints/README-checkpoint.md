@@ -31,7 +31,7 @@ Une fois que vous êtes dans le bon répertoire, vous devez exécuter la command
 Cela fera une copie locale de tous les fichiers pertinents.
 
 
-### Environnement Python
+## Environnement Python
 
 Python permet aux utilisateurs de créer des environnements spécifiques adaptés à leurs applications.
 Ces didacticiels inclus dans cette collection nécessitent un certain nombre de packages non standard. Dans ce répertoire, les utilisateurs trouveront un fichier *env_MF_teledetection.yaml* qui pourra être utilisé pour
@@ -49,11 +49,11 @@ Cela créera un environnement Python appelé *env_MF_teledetection**. L'environn
 `conda activate env_MF_teledetection` ( parfois /opt/conda/env_MF_teledetection )
 et
 
-`python -m ipykernel install --user --name=env_MF_teledetection` (Utilisation de ce kernel dans le noteboook)
+`python -m ipykernel install --user --name=env_MF_teledetection` (Utilisation de ce kernel dans le Noteboook)
 
 Maintenant, vous êtes prêts !
 
-### Utiliser Jupyter Notebook
+# Utiliser Jupyter Notebook
 
 Ce module est basé sur une série de notebooks Jupyter. Ceux-ci prennent en charge un apprentissage interactif de haut niveau en nous permettant de combiner code, description textuelle et visualisations de données.
 Pour exécuter Jupyter Notebook, ouvrez un terminal ou une invite de commande et assurez-vous d'avoir activé le bon environnement. Encore une fois, accédez au dossier du référentiel. Vous pouvez maintenant exécuter Jupyter en utilisant :
@@ -61,9 +61,12 @@ jupyter lab ou jupyter-lab, selon votre système d'exploitation.
 Cela devrait ouvrir Jupyter Notebooks dans une fenêtre de navigateur.
 
 Remarque:
-Un répertoire /stockage/DATA contenant les fichiers sources est accessible sur le JupyterHub mis à disposition.
+Un répertoire /stockage/DATA contenant les fichiers sources est accessible sur le JupyterLab mis à disposition.
 
-À défaut télécharger les données sur le data store d'eumetsat (https://data.eumetsat.int/search?)
+### À défaut 
+
+Autre espace de travail par exemple disponible : WEkEO Copernicus (Cf. Index / Directives WEkEO)
+Télécharger les données sur le Data Store d'EUMETSAT (https://data.eumetsat.int/search?)
 
 <hr>
 <hr>
