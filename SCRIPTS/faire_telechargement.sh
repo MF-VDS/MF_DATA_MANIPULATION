@@ -8,8 +8,8 @@ set -x
 PYTHONPATH=/opt/conda/env_MF_teledetection 
 
 annee=2026
-mois=06
-jourj=14
+mois=10
+jourj=05
 
 for hh in 12 # 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23
 do
@@ -35,7 +35,7 @@ do
 
             #665=HR
 
-            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*.nc' --output ${repsource} --threads 10
+            #eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*.nc' --output ${repsource} --threads 10
         
             # eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0033.nc' --output ${repsource} --threads 10
             # eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0034.nc' --output ${repsource} --threads 10

@@ -10,7 +10,7 @@ Météo-France
 
 Pour toutes questions contacter meteo-spatiale@meteo.fr
 
-Tous les noms de produits, logos et marques sont la propriété de leurs propriétaires respectifs.
+Tous les noms de produits, logos et marques sont la propriété de leurs propriétaires respectifs. </br>
 Tous les noms d'entreprises, de produits et de services utilisés sur ce site Web sont uniquement à des fins d'identification.
 
 ## Auteurs
@@ -22,8 +22,8 @@ Tous les noms d'entreprises, de produits et de services utilisés sur ce site We
 
 ## Installation
 
-Le moyen le plus simple et le meilleur pour installer ces packages est Git. Les utilisateurs peuvent cloner ce référentiel.
-Une fois que vous avez ouvert un terminal/une invite de commande, vous devez accéder au répertoire dans lequel vous souhaitez placer le code. 
+Le moyen le plus simple et le meilleur pour installer ces packages est Git. Les utilisateurs peuvent cloner ce référentiel.</br>
+Une fois que vous avez ouvert un terminal/une invite de commande, vous devez accéder au répertoire dans lequel vous souhaitez placer le code. </br>
 Une fois que vous êtes dans le bon répertoire, vous devez exécuter la commande suivante :
 
 `git clone https://github.com/MF-VDS/MF_DATA_MANIPULATION.git`
@@ -33,7 +33,7 @@ Cela fera une copie locale de tous les fichiers pertinents.
 
 ## Environnement Python
 
-Python permet aux utilisateurs de créer des environnements spécifiques adaptés à leurs applications.
+Python permet aux utilisateurs de créer des environnements spécifiques adaptés à leurs applications.</br>
 Ces didacticiels inclus dans cette collection nécessitent un certain nombre de packages non standard. Dans ce répertoire, les utilisateurs trouveront un fichier *env_MF_teledetection.yaml* qui pourra être utilisé pour
 construire un environnement qui installera tous les packages requis.
 
@@ -55,17 +55,17 @@ Maintenant, vous êtes prêts !
 
 # Utiliser Jupyter Notebook
 
-Ce module est basé sur une série de notebooks Jupyter. Ceux-ci prennent en charge un apprentissage interactif de haut niveau en nous permettant de combiner code, description textuelle et visualisations de données.
+Ce module est basé sur une série de notebooks Jupyter. Ceux-ci prennent en charge un apprentissage interactif de haut niveau en nous permettant de combiner code, description textuelle et visualisations de données.</br>
 Pour exécuter Jupyter Notebook, ouvrez un terminal ou une invite de commande et assurez-vous d'avoir activé le bon environnement. Encore une fois, accédez au dossier du référentiel. Vous pouvez maintenant exécuter Jupyter en utilisant :
 jupyter lab ou jupyter-lab, selon votre système d'exploitation.
 Cela devrait ouvrir Jupyter Notebooks dans une fenêtre de navigateur.
 
-Remarque:
+Remarque:</br>
 Un répertoire /stockage/DATA contenant les fichiers sources est accessible sur le JupyterLab mis à disposition.
 
 ### À défaut 
 
-Autre espace de travail par exemple disponible : WEkEO Copernicus (Cf. Index / Directives WEkEO)
+Autre espace de travail par exemple disponible : WEkEO Copernicus (Cf. Index / Directives WEkEO) </br>
 Télécharger les données sur le Data Store d'EUMETSAT (https://data.eumetsat.int/search?)
 
 <hr>

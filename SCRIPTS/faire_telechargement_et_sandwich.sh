@@ -8,8 +8,8 @@
 PYTHONPATH=/opt/conda/env_MF_teledetection 
 
 annee=2026
-mois=05
-jourj=27
+mois=10
+jourj=05
 #Definir zone centre de la zone à découper
 latdomaine='46.5'
 londomaine='1'
@@ -25,9 +25,9 @@ domaine_decoupe='-2080000 -1170000 1920000 1080000' # projection ortho
 #rm ~/MF_DATA_MANIPULATION/RESULTS/* 2>/dev/null
 
 
-for hh in 16 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
+for hh in 12 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
 do
-    for mm in 10 #10 20 30 40 50
+    for mm in 00 #10 20 30 40 50
     do
     if [ "$mm" = "00" ] ; then minutem=0 ; minutem2=1 ; fi
     if [ "$mm" = "10" ] ; then minutem=1 ; minutem2=2 ; fi
@@ -79,7 +79,7 @@ do
     # date à modifier dans ce script également si besoin
     #python  sandwich_test_3D.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} #> /dev/null 2>1
     #python sandwich_test.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} 0.1 #> /dev/null 2>1  
-    python sandwich_test.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} 0.1 #> /dev/null 2>1  
+    python sandwich.py ${annee} ${mois} ${jourj} ${hh} ${minutem} ${minutem2} 0.1 #> /dev/null 2>1  
         
     
 

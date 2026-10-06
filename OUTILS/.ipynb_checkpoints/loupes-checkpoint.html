@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Galerie CMS</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <title>Visualization of RGB bands</title>
+
+    <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      color: #FFFFFF;
+      padding-top: 100px; /* Décale tout le contenu sous le header fixe */
+      margin: 0;
+    }
+        #title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #FFFFFF;
+        }
+        #image-container {
+            position: relative;
+            display: inline-block;
+            width: 1000px; /* Taille fixe de l'image */
+            border: 2px dashed #ccc; /* Bordure pour la zone de glisser-déposer */
+        }
+        #image-container img {
+            display: block;
+            width: 100%; /* L'image s'adapte à la largeur du conteneur */
+            height: auto; /* Conserver les proportions */
+        }
+        .loupe {
+            position: absolute;
+            width: 230px; /* Taille de la loupe */
+            height: 230px;
+            border: 4px solid; /* Bordure plus épaisse */
+            border-radius: 20%;
+            overflow: hidden;
+            pointer-events: none;
+            display: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .loupe img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #loupe-original {
+            border-color: grey; /* Bordure grise */
+            transform: translate(00px, 3px); /* Décalage horizontal et vertical */
+        }
+        #loupe-red {
+            border-color: red; /* Bordure rouge */
+            transform: translate(250px, 3px); /* Décalage horizontal et vertical */
+        }
+        #loupe-green {
+            border-color: green; /* Bordure verte */
+            transform: translate(500px, 3px); /* Décalage vertical */
+        }
+        #loupe-blue {
+            border-color: blue; /* Bordure bleue */
+            transform: translate(750px, 3px); /* Décalage horizontal et vertical */
+        }
+       
+        #loupe-gamma1 {
+            border-color: white; /* Bordure blanche */
+            transform: translate(1200px, 3px); /* Décalage horizontal et vertical */
+        }
+        #loupe-gamma2 {
+            border-color: white; /* Bordure blanche */
+            transform: translate(1055px, 3px); /* Décalage vertical */
+        }
+        #loupe-gamma3 {
+            border-color: white; /* Bordure blanche */
+            transform: translate(1240px, 3px); /* Décalage horizontal et vertical */
+        }
+        #cursor-circle {
+            position: fixed;
+            width: 150px; /* Même taille que les loupes */
+            height: 150px;
+            border: 2px solid grey; /* Cercle gris */
+            border-radius: 20%;
+            pointer-events: none;
+            display: none;
+            transform: translate(-50%, -50%); /* Centrer sur la souris */
+        }
+    </style>
+</head>
+<body>
+
+      <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <i class="bi bi-globe-europe-africa"></i>
+        <h1>Galerie CMS</h1>
+      </a>
+    </div>
+  </header><!-- End Header -->
+
+
+    <div id="title">Visualisation des bandes RGB</div>
+    <b>Glisser/déposer ou coller (crtl+v) pour changer l'image</b>
+    <div id="image-container">
+        <img id="original-image" src="data_images/comparaison/mtg/slider4/20250225/cloudtype_20250225_1200_mtgi1_europe.jpg" alt="Image originale">
+        <div id="loupe-red" class="loupe">
+            <img id="loupe-image-red" src="" alt="Loupe Red" >
+        </div>
+        <div id="loupe-green" class="loupe">
+            <img id="loupe-image-green" src="" alt="Loupe Green">
+        </div>
+        <div id="loupe-blue" class="loupe">
+            <img id="loupe-image-blue" src="" alt="Loupe Blue">
+        </div>
+        <div id="loupe-original" class="loupe">
+            <img id="loupe-image-original" src="" alt="Loupe Originale">
+        </div>
+        <div id="cursor-circle"></div> <!-- Cercle gris autour de la souris -->
+    </div>
+
+    <script>
+        const originalImage = document.getElementById('original-image');
+        const loupes = {
+            red: { element: document.getElementById('loupe-red'), image: document.getElementById('loupe-image-red') },
+            green: { element: document.getElementById('loupe-green'), image: document.getElementById('loupe-image-green') },
+            blue: { element: document.getElementById('loupe-blue'), image: document.getElementById('loupe-image-blue') },
+            original: { element: document.getElementById('loupe-original'), image: document.getElementById('loupe-image-original') },
+            gamma1: { element: document.getElementById('loupe-gamma1'), image: document.getElementById('loupe-image-gamma1') },
+            gamma2: { element: document.getElementById('loupe-gamma2'), image: document.getElementById('loupe-image-gamma2') },
+            gamma3: { element: document.getElementById('loupe-gamma3'), image: document.getElementById('loupe-image-gamma3') }
+        };
+        const cursorCircle = document.getElementById('cursor-circle');
+        const imageContainer = document.getElementById('image-container');
+
+        // Créer un canvas pour manipuler les pixels de l'image
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Variable pour suivre si l'image est chargée
+        let isImageLoaded = false;
+
+        // Fonction pour appliquer un gamma à une image
+        function applyGamma(imageData, gamma) {
+            const data = imageData.data;
+            for (let i = 0; i < data.length; i += 4) {
+                data[i] = 255 * Math.pow(data[i] / 255, gamma);     // Red
+                data[i + 1] = 255 * Math.pow(data[i + 1] / 255, gamma); // Green
+                data[i + 2] = 255 * Math.pow(data[i + 2] / 255, gamma); // Blue
+            }
+            return imageData;
+        }
+
+        // Fonction pour charger une nouvelle image
+        function loadImage(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                originalImage.src = e.target.result;
+                originalImage.onload = () => {
+                    setupImageProcessing();
+                };
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Fonction pour charger une image depuis une URL
+        function loadImageFromUrl(imageUrl) {
+            originalImage.src = imageUrl;
+            originalImage.onload = () => {
+                setupImageProcessing();
+            };
+            originalImage.onerror = () => {
+                console.error('Erreur de chargement de l\'image depuis l\'URL');
+            };
+        }
+
+        // Fonction pour configurer le traitement d'image après chargement
+        function setupImageProcessing() {
+            isImageLoaded = true;
+            canvas.width = originalImage.naturalWidth;
+            canvas.height = originalImage.naturalHeight;
+            ctx.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
+           
+            // Activer les événements de souris
+            setupMouseEvents();
+        }
+
+        // Vérifier si une image est passée dans l'URL
+        function checkUrlForImage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const imageUrl = urlParams.get('image');
+           
+            if (imageUrl) {
+                // Décoder l'URL (elle est encodée)
+                const decodedUrl = decodeURIComponent(imageUrl);
+                loadImageFromUrl(decodedUrl);
+            } else {
+                // Si aucune image dans l'URL, charger l'image par défaut
+                originalImage.onload = setupImageProcessing;
+            }
+        }
+
+        // Configuration des événements de souris
+        function setupMouseEvents() {
+            // Supprimer les anciens événements s'ils existent
+            originalImage.removeEventListener('mousemove', handleMouseMove);
+            originalImage.removeEventListener('mouseleave', handleMouseLeave);
+           
+            // Ajouter les nouveaux événements
+            originalImage.addEventListener('mousemove', handleMouseMove);
+            originalImage.addEventListener('mouseleave', handleMouseLeave);
+        }
+
+        // Gestion du mouvement de la souris
+        function handleMouseMove(e) {
+            if (!isImageLoaded) return;
+           
+            const rect = originalImage.getBoundingClientRect();
+            const scaleX = originalImage.naturalWidth / rect.width;
+            const scaleY = originalImage.naturalHeight / rect.height;
+           
+            // Calculer les coordonnées dans l'image originale
+            const x = Math.floor((e.clientX - rect.left) * scaleX);
+            const y = Math.floor((e.clientY - rect.top) * scaleY);
+           
+            // S'assurer que les coordonnées sont dans les limites de l'image
+            if (x < 75 || x > originalImage.naturalWidth - 75 ||
+                y < 75 || y > originalImage.naturalHeight - 75) {
+                return;
+            }
+
+            // Positionner le cercle gris autour de la souris
+            cursorCircle.style.left = `${e.clientX}px`;
+            cursorCircle.style.top = `${e.clientY}px`;
+            cursorCircle.style.display = 'block';
+
+            // Extraire la région sous la loupe (150x150 pixels dans l'image originale)
+            const imageData = ctx.getImageData(x - 75, y - 75, 150, 150);
+
+            // Afficher chaque bande dans les loupes RGB
+            const bands = ['red', 'green', 'blue'];
+            bands.forEach((band, bandIndex) => {
+                const bandData = new ImageData(new Uint8ClampedArray(imageData.data), 150, 150);
+                const data = bandData.data;
+
+                // Convertir la bande sélectionnée en teintes de gris
+                for (let i = 0; i < data.length; i += 4) {
+                    const value = data[i + bandIndex]; // Récupérer la valeur de la bande sélectionnée
+                    data[i] = value;     // Red
+                    data[i + 1] = value; // Green
+                    data[i + 2] = value; // Blue
+                }
+
+                // Afficher la bande dans la loupe
+                const tempCanvas = document.createElement('canvas');
+                tempCanvas.width = 150;
+                tempCanvas.height = 150;
+                const tempCtx = tempCanvas.getContext('2d');
+                tempCtx.putImageData(bandData, 0, 0);
+
+                loupes[band].image.src = tempCanvas.toDataURL();
+                loupes[band].element.style.display = 'block';
+            });
+
+            // Afficher la loupe originale
+            const originalData = new ImageData(new Uint8ClampedArray(imageData.data), 150, 150);
+            const tempCanvas = document.createElement('canvas');
+            tempCanvas.width = 150;
+            tempCanvas.height = 150;
+            const tempCtx = tempCanvas.getContext('2d');
+            tempCtx.putImageData(originalData, 0, 0);
+
+            loupes.original.image.src = tempCanvas.toDataURL();
+            loupes.original.element.style.display = 'block';
+
+            // Afficher les loupes gamma (si les éléments existent)
+            const gammaValues = { gamma1: 0.8, gamma2: 0.65, gamma3: 0.5 };
+            Object.keys(gammaValues).forEach((gammaKey) => {
+                if (loupes[gammaKey] && loupes[gammaKey].element) {
+                    const gammaData = applyGamma(new ImageData(new Uint8ClampedArray(imageData.data), 150, 150), gammaValues[gammaKey]);
+
+                    // Afficher l'image avec gamma appliqué
+                    const tempCanvas = document.createElement('canvas');
+                    tempCanvas.width = 150;
+                    tempCanvas.height = 150;
+                    const tempCtx = tempCanvas.getContext('2d');
+                    tempCtx.putImageData(gammaData, 0, 0);
+
+                    loupes[gammaKey].image.src = tempCanvas.toDataURL();
+                    loupes[gammaKey].element.style.display = 'block';
+                }
+            });
+        }
+
+        // Gestion de la sortie de la souris
+        function handleMouseLeave() {
+            Object.values(loupes).forEach((loupe) => {
+                if (loupe.element) {
+                    loupe.element.style.display = 'none';
+                }
+            });
+            cursorCircle.style.display = 'none';
+        }
+
+        // Gestion du glisser-déposer
+        imageContainer.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            imageContainer.style.borderColor = '#000'; // Changement de couleur de la bordure
+        });
+
+        imageContainer.addEventListener('dragleave', () => {
+            imageContainer.style.borderColor = '#ccc'; // Rétablir la couleur de la bordure
+        });
+
+        imageContainer.addEventListener('drop', (e) => {
+            e.preventDefault();
+            imageContainer.style.borderColor = '#ccc'; // Rétablir la couleur de la bordure
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                loadImage(file);
+            }
+        });
+
+        // Gestion du collage d'image (Ctrl+V)
+        window.addEventListener('paste', (e) => {
+            const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].type.indexOf('image') === 0) {
+                    const file = items[i].getAsFile();
+                    if (file) {
+                        loadImage(file);
+                        break;
+                    }
+                }
+            }
+        });
+
+        // Appeler la fonction au chargement de la page
+        document.addEventListener('DOMContentLoaded', checkUrlForImage);
+
+        // Initialiser les événements pour l'image par défaut
+        if (originalImage.complete) {
+            setupImageProcessing();
+        }
+
+    </script>
+</body>
+</html> 

@@ -15,6 +15,8 @@ import matplotlib.pyplot as plt
 from pyresample import AreaDefinition
 import matplotlib.colors as mcolors
 import xarray as xr
+import glob
+
 
 os.environ['PATH'] = f"/opt/conda/env_MF_teledetection/bin:{os.environ['PATH']}" 
 os.environ['PATH'] = f"~/.conda/envs/env_MF_teledetection/bin:{os.environ['PATH']}"
@@ -23,68 +25,39 @@ os.environ['PROJ_LIB'] = '/opt/conda/env_MF_teledetection/share/proj'
 
 shell=True
 
-compo=sys.argv[1]
 yyyy=sys.argv[1]
 mm=sys.argv[2]
 dd=sys.argv[3]
 hh=sys.argv[4]
 min=sys.argv[5]
-varres=sys.argv[7]
+minn=sys.argv[6]
 
 
-#input = '/stockage/DATA/202508281030/' #plein disque
-#input = '/stockage/DATA/202508281030_HR/' # plein disque HR
-input = '/stockage/DATA/202508281030_HR_chunks_30-39/'  # chunk 30/39 HR # plus rapide sur l'Europe
+#input = '/stockage/DATA/'+yyyy+mm+dd+hh+min+'0/' #plein disque
+#input = '/stockage/DATA/'+yyyy+mm+dd+hh+min+'0_HR/' # plein disque HR
+input = '/stockage/DATA/'+yyyy+mm+dd+hh+min+'0/'  # chunk 30/39 HR # plus rapide sur l'Europe
+
+
 
 download_dir = os.path.join(os.getcwd(), "../RESULTS")
 os.makedirs(download_dir, exist_ok=True)
 
 output = '../RESULTS'
 
-annee='2025'
-mois='08'
-jour='28'
-heure='10'
-
-yyyy=int(annee)
-mm=int(mois)
-dd=int(jour)
-hh_debut=int(heure)
-min_debut=int('30')
-hh_fin=int(heure)
-min_fin=int('40')
-
 reader_to_use = "fci_l1c_nc"
 
 filename = (output + '/RGB_sadnwich' )
 
-myfiles = find_files_and_readers(base_dir=input,
-                                 start_time=datetime(yyyy,mm,dd,hh_debut,min_debut),
-                                 end_time=datetime(yyyy,mm,dd,hh_fin,min_fin),
-                                 reader=reader_to_use)
-
-
 # Charger les données
-scn = Scene(filenames=myfiles, reader='fci_l1c_nc')
+#scn = Scene(filenames=myfiles, reader='fci_l1c_nc')
+scn = Scene(filenames=glob.glob(os.path.join(input, '*.nc')), reader='fci_l1c_nc')
 
 # --- Chargement des données ---
 scn.load(['vis_06', 'ir_105'])
 
 scn_res = scn.resample(scn['vis_06'].area)
-
 vis = scn_res['vis_06'].values.astype('float32')
 ir  = scn_res['ir_105'].values.astype('float32')
-
-##test ajout gamma seulement au vis 06
-## --- Normalisation VIS ---
-#vis_min, vis_max = np.nanmin(vis), np.nanmax(vis)
-#vis_norm = (vis - vis_min) / (vis_max - vis_min)
-## --- Correction gamma (uniquement sur le VIS) ---
-#gamma = 2.0
-#vis_norm = np.power(vis_norm, 1/gamma)
-## RGB du visible (éclairci)
-#vis_rgb = np.dstack([vis_norm]*3) 
-
 
 # --- VIS normalisé + gamma ---
 vis_min, vis_max = np.nanmin(vis), np.nanmax(vis)
@@ -149,15 +122,6 @@ mask = ir_c <= -20
 ir_rgb = cmap_custom(norm_custom(ir_c))[..., :3] 
 ########################################################## fin palette à façon
 
-
-# --- Superposition IR sur le visible seulement là où mask=True ---
-#ajout transparence
-#alpha_ir = 0.85  # 0 = IR invisible, 1 = IR opaque, exmeple 0.6 = 60% d IR
-#sandwich = vis_rgb.copy()
-#sandwich[mask] = (
-#    (1 - alpha_ir) * vis_rgb[mask] + alpha_ir * ir_rgb[mask]
-#)
-
 # --- Fusion type "sandwich multiplicatif" ---
 # Ici on multiplie la luminance VIS par la couleur IR
 sandwich = vis_rgb * ir_rgb
@@ -166,14 +130,8 @@ sandwich = vis_rgb * ir_rgb
 sandwich = vis_rgb.copy()
 sandwich[mask] = vis_rgb[mask] * ir_rgb[mask] 
 
-
-
-# --- Retour vertical si besoin ---
-#sandwichflip = np.flipud(sandwich)
-# --- Sauvegarde ---
-#plt.imsave("../RESULTS/sandwichflip.png", sandwichflip)
-
 # mettre les 2 sur la grille IR
+#scn_res = scn.resample(scn['vis_06'].area) # test rc pour ressampler
 scn_res = scn.resample(scn['vis_06'].area)
 # --- Récupérer zone géographique de la donnée ---
 area = scn_res['ir_105'].attrs['area']
