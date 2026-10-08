@@ -35,7 +35,8 @@ min_val = sys.argv[5]
 minn = sys.argv[6]
 
 # ZONE D'INTERET OPTIMISEE : 6W 8E 42N 51N
-TARGET_BOUNDS = (-70, -70, 70, 70)  # left, bottom, right, top
+#TARGET_BOUNDS = (-70, -70, 70, 70)  # left, bottom, right, top
+TARGET_BOUNDS = (-15, 30, 25, 60)  # left, bottom, right, top   # zone réduite pour accélérer le script
 
 input = '/stockage/DATA/' + yyyy + mm + dd + '/'
 

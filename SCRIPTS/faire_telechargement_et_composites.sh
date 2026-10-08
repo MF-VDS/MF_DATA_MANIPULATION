@@ -3,7 +3,7 @@ set -x
 
 # 20251001
 # Ce script fabrique un produit Sandwich
-# Il lance un second script python intermédiaire sandwich.py
+# Il lance un second script python intermédiaire satpy_composites.py
 
 PYTHONPATH=/opt/conda/env_MF_teledetection 
 
