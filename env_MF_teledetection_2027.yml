@@ -1,0 +1,23 @@
+name: env_MF_teledetection_2027
+channels:
+  - conda-forge
+  - cmts
+  - eumetsat
+dependencies:
+  - satpy
+  - python=3.11
+  - gdal
+  - libgdal
+  - libgdal-hdf5
+  - hdf5plugin
+  - imagemagick
+  - cartopy
+  - ipympl
+  - jupyterlab
+  - matplotlib
+  - pillow
+  - zip
+  - eumdac
+  - ffmpeg
+  - attr
+  - setuptools=65

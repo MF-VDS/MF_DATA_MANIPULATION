@@ -23,7 +23,7 @@ do
         if [ "$mm" = "50" ] ; then minutem=5 ; minutem2=0 ; fi
             
         repdest=RESULTS
-        repsource="/stockage/DATA/${annee}${mois}${jourj}"
+        repsource="/home/coster/DATA/${annee}${mois}${jourj}"
         fic="${annee}${mois}${jourj}_${hh}${mm}_mtgi1_satpy_${compo}"
 
     
@@ -37,18 +37,18 @@ do
 
             #eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*.nc' --output ${repsource} --threads 10
         
-            # eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0033.nc' --output ${repsource} --threads 10
-            # eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0034.nc' --output ${repsource} --threads 10
-            # eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0035.nc' --output ${repsource} --threads 10 #france
-            # eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0036.nc' --output ${repsource} --threads 10 #france
+             eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0033.nc' --output ${repsource} --threads 10
+             eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0034.nc' --output ${repsource} --threads 10
+             eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0035.nc' --output ${repsource} --threads 10 #france
+             eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0036.nc' --output ${repsource} --threads 10 #france
             # eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0037.nc' --output ${repsource} --threads 10 #france
             # eumdac download -c EO:EUM:DAT:0665 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0038.nc' --output ${repsource} --threads 10
 
-            eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*.nc' --output ${repsource} --threads 10
-            # eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0033.nc' --output ${repsource} --threads 10
-            # eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0034.nc' --output ${repsource} --threads 10
-            # eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0035.nc' --output ${repsource} --threads 10 #france
-            # eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0036.nc' --output ${repsource} --threads 10 #france
+            #eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*.nc' --output ${repsource} --threads 10
+             eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0033.nc' --output ${repsource} --threads 10
+             eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0034.nc' --output ${repsource} --threads 10
+             eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0035.nc' --output ${repsource} --threads 10 #france
+             eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0036.nc' --output ${repsource} --threads 10 #france
             # eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0037.nc' --output ${repsource} --threads 10 #france
             # eumdac download -c EO:EUM:DAT:0662 --start ${annee}-${mois}-${jourj}T${hh}:${minutem}0:00 --end ${annee}-${mois}-${jourj}T${hh}:${minutem2}0:00 --entry '*0038.nc' --output ${repsource} --threads 10
             mv ${repsource}/*/* ${repsource}/

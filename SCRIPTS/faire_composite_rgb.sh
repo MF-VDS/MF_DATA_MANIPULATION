@@ -3,7 +3,11 @@
 
 #source  ~/anaconda3/etc/profile.d/conda.sh
 #conda activate env_MF_stage
-PYTHONPATH=/opt/conda/env_MF_teledetection # A modifier !!!
+#PYTHONPATH=/opt/conda/env_MF_teledetection # A modifier !!!
+#PYTHONPATH=/home/coster/.conda/envs/env_MF_teledetection_2027
+
+#source /opt/conda/etc/profile.d/conda.sh
+#conda activate env_MF_teledetection_2027
 
 #dj=`date +%Y%m%d`
 #hh=$(date +%H)
@@ -12,13 +16,13 @@ PYTHONPATH=/opt/conda/env_MF_teledetection # A modifier !!!
 #hh=$(date +%H)
 
 annee=2026
-mois=05
-jourj=27
+mois=10
+jourj=05
 choix=facon
 
 nomdomaine=France ; latdomaine='45' ; londomaine='0'
 
-for hh in 14 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
+for hh in 12 #00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 #12 13 14 15 16 17 18 19 20 21 22 23
 do
     for mm in 00 #10 20 30 40 50
     do
@@ -30,7 +34,7 @@ do
     if [ "$mm" = "40" ] ; then minutem=4 ; fi
     if [ "$mm" = "50" ] ; then minutem=5 ; fi
 
-        for compo in cloud_phase true_color day_severe_storm #true_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection dust day_severe_storm
+        for compo in  true_color # cloud_phase day_severe_storm #true_color cloud_phase cloud_type day_microphysics ash airmass fire_temperature cloud_phase cloudtop convection dust day_severe_storm
         do
 
             nomcompo=${compo}
@@ -72,24 +76,21 @@ do
             echo -n "$fic : "
 
             echo "decoupe tif et creation jpg"
-            mv ${repdest}/${compo}_${annee}${mois}${jourj}_${hh}${mm}_satpy.tif ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}.tif
+            mv ${repdest}/${compo}_${annee}${mois}${jourj}_${hh}${mm}_mtgi1_satpy.tif ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}.tif
 
             echo "$fic domaine ${nomdomaine}"
             gdalwarp -q -overwrite -t_srs "+proj=ortho lat_0=${latdomaine} lon_0=${londomaine}" -te -3200000 -1800000 3200000 1800000 -r cubic  ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}.tif ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.tif
 
-            convert -quiet ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.tif ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_1.jpg
-            convert -quiet ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_1.jpg -font Liberation-Sans-Bold -pointsize 11 -fill '#ffffff'  -annotate +12+12 "MTG $nomcompo / ${annee}${mois}${jourj} - ${hh}${mm}UTC" ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.jpg #ajout dateheure
-            convert -resize 1920x1080 ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.jpg ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_1920-1080.png
-            convert -quiet -resize 2000 ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}.tif ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}.jpg
+            magick -quiet ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.tif ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_tmp1.jpg
+            magick -quiet ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_tmp1.jpg -font ../OUTILS/Police_Marianne/Marianne-Regular.otf -pointsize 11 -fill '#ffffff'  -annotate +12+12 "MTG $nomcompo / ${annee}${mois}${jourj} - ${hh}${mm}UTC" ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.jpg #ajout dateheure
+            magick  ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}.jpg -resize 1920x1080 ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_1920-1080.png
+            magick  ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}.tif -resize 2000 ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}.jpg
 
-            rm -f  ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_1.jpg  #${repdest}/*.tif
-            rm -f  ${repdest}/*med_0.* ${repdest}/*_med_1.* 
-            rm  ${repdest}/${fic}_*hd*.jpg ${repdest}/${fic}*1800x1800*.png   ${repdest}/${fic}_*large.tif #${repdest}/${fic}_*europe.tif
-            rm  ${repdest}/*_.jpg ${repdest}/*.xml #${repdest}/${annee}${mois}${jourj}_${hh}00_satpy_${compo}.tif
-            rm  ${repdest}/*.tif
+            rm -f  ${repdest}/${annee}${mois}${jourj}_${hh}${mm}_satpy_${compo}_${nomdomaine}_tmp1.jpg  ${repdest}/*.xml #${repdest}/*.tif
+            #rm  ${repdest}/*.tif
 
         done
     done
 done
 
-conda deactivate
+#conda deactivate
